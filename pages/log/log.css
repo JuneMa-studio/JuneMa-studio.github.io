@@ -1,0 +1,21 @@
+/* log.css */
+*{
+	margin: 0px;
+}
+.logs{
+	width: 100%;
+	margin-top: 10px;
+	box-sizing: border-box;
+	border: 2px solid #999;
+	border-radius: 10px;
+}
+.datetime{
+	font-size: 12px;
+	margin-left: 10px;
+	line-height: 20px;
+}
+.info{
+	margin-left: 20px;
+	font-size: 14px;
+	line-height: 30px;
+}
