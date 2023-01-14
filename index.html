@@ -15,45 +15,34 @@
 				<p class="p1">JuneMa</p><p class="p2">Studio</p>
 			</div>
 		</div>
-		<div class="menubt">
-			<div class="menulist">
-				<div style="height: 100px;"></div>
-				<div class="list_item" onclick="dia('#about','showModal')">
-					<p class="list_item_text">关于</p>
-				</div>
-				<div class="list_item"  onclick="dia('#setting','showModal')">
-					<p class="list_item_text">选项</p>
-				</div>
-				<div class="list_item" onclick="dia('#contect','showModal')">
-					<p class="list_item_text">联系我</p>
-				</div>
-				<div class="list_item"  onclick="dia('#log','showModal')">
-					<p class="list_item_text">日志</p>
-				</div>
-				<div class="list_more">
-					<img class="list_more_img" src="./img/github_logo.png">
-					<p class="list_more_text">powered by Github</p>
-					<a href="https://github.com/JuneMa-studio" class="list_more_text">Github @ JuneMa-studio</a>
-				</div>
-			</div>
-		</div>
 		<div class="mainarea">
-			<div style="width: 100vw;height: 65px;background-color: #000"></div>
+			<div style="width: 100vw;height: 70px;background-color: #000;"></div>
 			<div class="rollmenu">
 				<div class="roll_item" id="home" onclick="rollmenuact(this)">
-					<p class="roll_item_p">个人主页</p>
+					<p class="roll_item_title">个人主页</p>
+					<div class="roll_item_page" id="home_page">
+						<iframe class="roll_item_page_iframe" src="./pages/home/home.html" frameborder="0"></iframe>
+					</div>
 				</div>
 				<div class="roll_item" id="note"  onclick="rollmenuact(this)">
-					<p class="roll_item_p">资源备忘</p>
+					<p class="roll_item_title">资源备忘</p>
+					<div class="roll_item_page" id="note_page">
+						<iframe class="roll_item_page_iframe" src="./pages/note/note.html" frameborder="0"></iframe>
+					</div>
 				</div>
 				<div class="roll_item" id="project"  onclick="rollmenuact(this)">
-					<p class="roll_item_p">个人项目</p>
+					<p class="roll_item_title">个人项目</p>
+					<div class="roll_item_page" id="project_page">
+						<iframe class="roll_item_page_iframe" src="./pages/project/project.html" frameborder="0"></iframe>
+					</div>
 				</div>
 				<div class="roll_item" id="other"  onclick="rollmenuact(this)">
-					<p class="roll_item_p">其它</p>
+					<p class="roll_item_title">其它</p>
+					<div class="roll_item_page" id="other_page">
+						<iframe class="roll_item_page_iframe" src="./pages/other/other.html" frameborder="0"></iframe>
+					</div>
 				</div>
 			</div>
-			
 		</div>
 		<dialog class="dia" id="about">
 			<p class="dia_title">关于</p>
@@ -77,9 +66,32 @@
 		</dialog>
 		<dialog class="dia" id="log">
 			<p class="dia_title">更新日志</p>
-			<iframe class="frame" src="./pages/log/log.html" frameborder="0"></iframe>
+			<iframe class="logframe" src="./pages/log/log.html" frameborder="0"></iframe>
 			<br>
 			<button class="bt" onclick="dia('#log','close')">关闭</button>
 		</dialog>
+		
+		<div class="menubt">
+			<div class="menulist">
+				<div style="height: 100px;"></div>
+				<div class="list_item" onclick="dia('#about','showModal')">
+					<p class="list_item_text">关于</p>
+				</div>
+				<div class="list_item"  onclick="dia('#setting','showModal')">
+					<p class="list_item_text">选项</p>
+				</div>
+				<div class="list_item" onclick="dia('#contect','showModal')">
+					<p class="list_item_text">联系我</p>
+				</div>
+				<div class="list_item"  onclick="dia('#log','showModal')">
+					<p class="list_item_text">日志</p>
+				</div>
+				<div class="list_more">
+					<img class="list_more_img" src="./img/github_logo.png">
+					<p class="list_more_text">powered by Github</p>
+					<a href="https://github.com/JuneMa-studio" class="list_more_text">Github @ JuneMa-studio</a>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>

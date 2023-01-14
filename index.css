@@ -123,16 +123,18 @@
 	border-radius: 10px;
 	margin-left: 20%;
 }
-.frame{
+.logframe{
 	width: 100%;
 }
 .rollmenu{
 	background-color: #000;
 	height: 30px;
-	transition: all 0.2s ease-in-out; 
+	transition: all 0.2s ease-in-out;
+	position: fixed;
+	top: 70px;
 }
 .roll_item{
-	text-align: center;
+	
 	line-height: 30px;
 	font-size: 14px;
 	float: left;
@@ -147,6 +149,23 @@
 	width: 40vw;
 	font-weight: 600;
 }
-.roll_item_p{
+.roll_item_title{
 	color: #fff;
+	text-align: center;
+}
+.roll_item_page{
+	display: none;
+}
+.roll_item_page_active{
+	background-color: aqua;
+	height: 100vh;
+	position: absolute;
+	top: 30px;
+	left: 0px;
+	right: 0px;
+	font-weight: 500;
+}
+.roll_item_page_iframe{
+	width: 100%;
+	height: calc(100% - 100px);
 }
