@@ -30,7 +30,6 @@
 				<div class="list_item"  onclick="dia('#log','showModal')">
 					<p class="list_item_text">日志</p>
 				</div>
-				
 				<div class="list_more">
 					<img class="list_more_img" src="./img/github_logo.png">
 					<p class="list_more_text">powered by Github</p>
@@ -38,26 +37,48 @@
 				</div>
 			</div>
 		</div>
+		<div class="mainarea">
+			<div style="width: 100vw;height: 70px;"></div>
+			<div class="rollmenu">
+				<div class="roll_item" id="home" onclick="rollmenuact(this)">
+					<p class="roll_item_p">个人主页</p>
+				</div>
+				<div class="roll_item" id="note"  onclick="rollmenuact(this)">
+					<p class="roll_item_p">资源备忘</p>
+				</div>
+				<div class="roll_item" id="project"  onclick="rollmenuact(this)">
+					<p class="roll_item_p">个人项目</p>
+				</div>
+				<div class="roll_item" id="other"  onclick="rollmenuact(this)">
+					<p class="roll_item_p">其它</p>
+				</div>
+			</div>
+			
+		</div>
 		<dialog class="dia" id="about">
 			<p class="dia_title">关于</p>
-			<p class="dia_info">网站最后更新日期：2023/01/13</p>
-			<p class="dia_info">更新日志：编写基本页面</p>
+			<p class="dia_info">网站最后更新日期：2023/01/14</p>
+			<p class="dia_info">更新日志：添加动效横向菜单</p>
 			<p class="dia_info">对于非本人的项目和资源，本站仅以备忘录形式展现，无任何商业用途</p>
+			<br>
 			<button class="bt" onclick="dia('#about','close')">关闭</button>
 		</dialog>
 		<dialog class="dia" id="setting">
 			<p class="dia_title">选项</p>
 			<p class="dia_info">建设中</p>
+			<br>
 			<button class="bt" onclick="dia('#setting','close')">关闭</button>
 		</dialog>
 		<dialog class="dia" id="contect">
 			<p class="dia_title">联系我</p>
 			<p class="dia_info">建设中</p>
+			<br>
 			<button class="bt" onclick="dia('#contect','close')">关闭</button>
 		</dialog>
 		<dialog class="dia" id="log">
 			<p class="dia_title">更新日志</p>
 			<iframe class="frame" src="./pages/log/log.html" frameborder="0"></iframe>
+			<br>
 			<button class="bt" onclick="dia('#log','close')">关闭</button>
 		</dialog>
 	</body>

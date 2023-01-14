@@ -126,3 +126,27 @@
 .frame{
 	width: 100%;
 }
+.rollmenu{
+	background-color: #000;
+	height: 30px;
+	transition: all 0.2s ease-in-out; 
+}
+.roll_item{
+	text-align: center;
+	line-height: 30px;
+	font-size: 14px;
+	float: left;
+	transition: all 0.2s ease-in-out; 
+}
+#home,#note,#project,#other{
+	width: 20vw;
+	box-sizing: border-box;
+	font-weight: 300;
+}
+#home{
+	width: 40vw;
+	font-weight: 600;
+}
+.roll_item_p{
+	color: #fff;
+}
