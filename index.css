@@ -4,13 +4,13 @@
 }
 #header{
 	width: 100vw;
-	background-color: #999;
+	background-color: #fff;
 	position: fixed;
 }
 .logo_name{
 	margin-left: 10px;
 	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-bottom: 9px;
 }
 .logo_name .p1{
 	font-size: 25px;
@@ -23,10 +23,10 @@
 	width: 25px;
 	height: 25px;
 	position: fixed;
-	top: 20px;
+	top: 0px;
 	right: 20px;
 	margin: auto;
-	transition: all 0.2s ease-in-out;
+	transition: all 0.15s ease-in-out;
 }
 .menubt .menulist{
 	display: none;
@@ -34,8 +34,8 @@
 .menubt:hover{
 	top: 0px;
 	right: 0px;
-	background-color: aqua;
-	background-color: rgba(255, 255, 255, 0.3);
+	background-color: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(10px);
 	border-radius: 10px 0px 0px 10px;
 	box-shadow: -2px 2px 10px 2px #999;
 	width: 61.8vw;
@@ -52,8 +52,7 @@
 	background-color: #000;
 	display: block;
 	position: fixed;
-	right: 20px;
-	transition: all 0.2s ease-in-out;
+	transition: all 0.15s ease-in-out;
 }
 .menubt::before{
 	top: 23px;
@@ -64,12 +63,14 @@
 }
 .menubt:hover::before{
 	top: 30px;
+	left: 20px;
 	box-shadow: none;
-	transform: rotate(45deg);
+	transform: rotate(135deg);
 }
 .menubt:hover::after{
 	top: 30px;
-	transform: rotate(-45deg);
+	left: 20px;
+	transform: rotate(-135deg);
 }
 .menulist{
 	height: 100%;
@@ -79,10 +80,10 @@
 	width: 80%;
 	height: 40px;
 	line-height: 40px;
-	background-color: #ddd;
+	background-color: rgba(255, 255, 255, 0.1);
 	margin: auto;
 	text-align: center;
-	border: 2px solid #999;
+	border: 1px solid #aaa;
 	border-radius: 10px;
 	margin-top: 10px;
 }
@@ -127,7 +128,7 @@
 	width: 100%;
 }
 .rollmenu{
-	background-color: #000;
+	background-color: #aaa;
 	height: 30px;
 	transition: all 0.2s ease-in-out;
 	position: fixed;
@@ -150,14 +151,13 @@
 	font-weight: 600;
 }
 .roll_item_title{
-	color: #fff;
+	color: #000;
 	text-align: center;
 }
 .roll_item_page{
 	display: none;
 }
 .roll_item_page_active{
-	background-color: aqua;
 	height: 100vh;
 	position: absolute;
 	top: 30px;
