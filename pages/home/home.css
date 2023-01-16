@@ -1,0 +1,72 @@
+/* home.css */
+*{
+	margin: 0px;
+}
+.main{
+	position: relative;
+}
+.rolling1{
+	width: 170vw;
+	height: 170vw;
+	position: absolute;
+	top: -50vw;
+	left: -70vw;
+	opacity: 1;
+	animation: roll1 20s 9999;
+}
+@keyframes roll1 {
+	0%{
+		transform: rotate(45deg);
+		background-color: #7ccaae;
+		border-radius: 30vw;
+	}
+	50%{
+		transform: rotate(-225deg);
+		background-color: #ffb69b;
+		border-radius: 50vw;
+	}
+	100%{
+		transform: rotate(45deg);
+		background-color: #7ccaae;
+		border-radius: 30vw;
+	}
+}
+.rolling2{
+	width: 170vw;
+	height: 170vw;
+	position: absolute;
+	top: -40vw;
+	left: -80vw;
+	opacity: 0.8;
+	animation: roll2 20s 99999;
+}
+@keyframes roll2 {
+	0%{
+		transform: rotate(-30deg);
+		background-color: #ffb69b;
+		border-radius: 30vw;
+	}
+	50%{
+		transform: rotate(200deg);
+		background-color: #7ccaae;
+		border-radius: 50vw;
+	}
+	100%{
+		transform: rotate(-30deg);
+		background-color: #ffb69b;
+		border-radius: 30vw;
+	}
+}
+#hh1, #hh2{
+	position: absolute;
+}
+#hh1{
+	top: 70px;
+	left: 20px;
+	font-size: 60px;
+}
+#hh2{
+	top: 140px;
+	left: 60px;
+	font-size: 40px;
+}

@@ -31,7 +31,7 @@
 	top: 0px;
 	right: 20px;
 	margin: auto;
-	transition: all 0.15s ease-in-out;
+	transition: all 0.25s ease-in-out;
 }
 .menubt .menulist{
 	display: none;
@@ -57,7 +57,7 @@
 	background-color: #efc638;
 	display: block;
 	position: fixed;
-	transition: all 0.15s ease-in-out;
+	transition: all 0.25s ease-in-out;
 }
 .menubt::before{
 	top: 23px;
@@ -105,7 +105,8 @@
 .dia{
 	width: 60vw;
 	margin: auto;
-	border: 3px solid #999;
+	background-color: #715ca8;
+	border: none;
 	border-radius: 10px;
 }
 .dia_title{
@@ -117,7 +118,7 @@
 }
 .bt{
 	width: 60%;
-	border: 2px solid #999;
+	border: none;
 	border-radius: 10px;
 	margin-left: 20%;
 }
