@@ -79,7 +79,7 @@ body{
 	transition: all 0.5s ease-in-out;
 	box-shadow: 3px 3px 10px 0px #333;
 }
-#hh1, #hh2{
+#hh1, #hh2, #hh3{
 	position: absolute;
 	transition: all 0.5s ease-in-out;
 	color: #000;
@@ -96,16 +96,98 @@ body{
 	font-size: 20px;
 	font-weight: 600;
 }
+#hh3{
+	top: calc(25vmin + 100px);
+	left: 10vmin;
+	font-size: 20px;
+	font-weight: 600;
+}
 .card{
 	width: 90vw;
-	height: 100px;
-	background-color: #2b103b;
 	margin: auto;
+}
+.card_item{
+	background-color: #2b103b;
 	margin-top: 20px;
 	border-radius: 20px;
-	color: #fff;
+	padding: 10px;
+	position: relative;
+	margin-bottom: 20px;
 }
-.card div{
-	text-align: center;
-	line-height: 100px;
+.card_item_title{
+	color: #fff;
+	font-weight: 600;
+	margin-left: 20px;
+	margin-top: 20px;
+}
+.card_item_text{
+	margin-left: 20px;
+	margin-bottom: 20px;
+	color: #fff;
+	font-size: 14px;
+	margin-top: 10px;
+	width: 60%;
+}
+.card_item_pic{
+	height: calc(100% + 10px);
+	position: absolute;
+	top: -10px;
+	right: 5%;
+	bottom: 0px;
+	width: 25%;
+	object-fit: fill;
+}
+.timeline{
+	color: #fff;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.tl_body{
+	list-style: none;
+}
+.tl_item{
+	position: relative;
+}
+.tl_time, .tl_things{
+	position: absolute;
+	height: 100%;
+}
+.tl_time{
+	width: 27%;
+	left: 0px;
+	top: 0px;
+}
+.tl_time p{
+	font-size: 12px;
+	text-align: right;
+	margin-top: 1px;
+}
+.tl_things{
+	width: 66%;
+	right: 0px;
+	top: 0px;
+}
+.tl_things p{
+	margin-top: -2px;
+}
+.tl_line::before{
+	content: "";
+	display: block;
+	margin-left: 30%;
+	width: 2px;
+	height: 80px;
+	background-color: #efc638;
+}
+.tl_line::after{
+	content: "";
+	width: 16px;
+	height: 16px;
+	display: block;
+	position: absolute;
+	top: 0px;
+	left: calc(30% - 7px);
+	box-sizing: border-box;
+	border: 2px solid #efc638;
+	border-radius: 8px;
+	background-color: #715ca8;
 }
