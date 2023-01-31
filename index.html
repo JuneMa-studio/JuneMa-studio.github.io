@@ -1,100 +1,58 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8" />
+		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-		<title>JuneMa.Studio</title>
-		<link rel="stylesheet" href="index.css">
-		<script src="js/jquery-3.6.3.min.js"></script>
-		<script src="js/public.js"></script>
-		<script src="index.js"></script>
+		<title>JuneMa Studio mobile</title>
+		<link rel="stylesheet" href="./mdui-v1.0.1/css/mdui.min.css">
+		<style>
+			.jm-title{
+				height: 70px;
+				padding-top: 40px;
+			}
+			.jm-a{
+				font-weight: 600;
+			}
+			.jm-drawer{
+				border-radius: 20px 0px 0px 20px;
+				width: 61.8vw;
+			}
+		</style>
 	</head>
-	<body>
-		<div id="header">
-			<div class="logo_name">
-				<p class="p1">JuneMa</p><p class="p2">Studio</p>
+	<body class="mdui-theme-layout-light mdui-theme-primary-red mdui-theme-accent-red mdui-appbar-with-toolbar mdui-appbar-with-tab">
+		<div class="mdui-appbar mdui-appbar-fixed mdui-shadow-0">
+			<div id="title" class="mdui-toolbar mdui-color-theme-600 jm-title">
+				<span class="mdui-typo-title">JuneMa Studio</span>
+				<div class="mdui-toolbar-spacer"></div>
+				<span class="mdui-btn mdui-btn-icon" mdui-tooltip="{content:'设置主题颜色'}">
+					<i class="mdui-icon material-icons">color_lens</i>
+				</span>
+				<span class="mdui-btn mdui-btn-icon" mdui-drawer="{target:'#right-drawer'}">
+					<i class="mdui-icon material-icons">menu</i>
+				</span>
+			</div>
+			<div id="tab" class="mdui-tab mdui-color-theme-400" mdui-tab>
+				<a href="#example1-tab1" class="jm-a">个人主页</a>
+				<a href="#example1-tab2" class="jm-a">资源备忘</a>
+				<a href="#example1-tab3" class="jm-a">个人项目</a>
+				<a href="#example1-tab4" class="jm-a">其它</a>
 			</div>
 		</div>
-		<div class="mainarea">
-			<div style="width: 100vw;height: 70px;background-color: #efc638"></div>
-			<div class="rollmenu">
-				<div class="roll_item" id="home" onclick="rollmenuact(this)">
-					<p class="roll_item_title">个人主页</p>
-					<div class="roll_item_page" id="home_page">
-						<iframe class="roll_item_page_iframe" src="./pages/home/home.html" frameborder="0"></iframe>
-					</div>
-				</div>
-				<div class="roll_item" id="note"  onclick="rollmenuact(this)">
-					<p class="roll_item_title">资源备忘</p>
-					<div class="roll_item_page" id="note_page">
-						<iframe class="roll_item_page_iframe" src="./pages/note/note.html" frameborder="0"></iframe>
-					</div>
-				</div>
-				<div class="roll_item" id="project"  onclick="rollmenuact(this)">
-					<p class="roll_item_title">个人项目</p>
-					<div class="roll_item_page" id="project_page">
-						<iframe class="roll_item_page_iframe" src="./pages/project/project.html" frameborder="0"></iframe>
-					</div>
-				</div>
-				<div class="roll_item" id="other"  onclick="rollmenuact(this)">
-					<p class="roll_item_title">其它</p>
-					<div class="roll_item_page" id="other_page">
-						<iframe class="roll_item_page_iframe" src="./pages/other/other.html" frameborder="0"></iframe>
-					</div>
-				</div>
-			</div>
+		<div id="example1-tab1" class="mdui-p-a-2">
+			home
 		</div>
-		<dialog class="dia" id="about">
-			<p class="dia_title">关于</p>
-			<p class="dia_info">网站最后更新日期：2023/01/14</p>
-			<p class="dia_info">更新日志：添加动效横向菜单</p>
-			<p class="dia_info">对于非本人的项目和资源，本站仅以备忘录形式展现，无任何商业用途</p>
-			<br>
-			<button class="bt" onclick="dia('#about','close')">关闭</button>
-		</dialog>
-		<dialog class="dia" id="setting">
-			<p class="dia_title">选项</p>
-			<p class="dia_info">皮肤选择</p>
-			<p class="dia_info">建设中</p>
-			<p class="dia_info">下次打开默认页面</p>
-			<p class="dia_info">建设中</p>
-			<br>
-			<button class="bt" onclick="dia('#setting','close')">关闭</button>
-		</dialog>
-		<dialog class="dia" id="contect">
-			<p class="dia_title">联系我</p>
-			<p class="dia_info">建设中</p>
-			<br>
-			<button class="bt" onclick="dia('#contect','close')">关闭</button>
-		</dialog>
-		<dialog class="dia" id="log">
-			<p class="dia_title">更新日志</p>
-			<iframe class="logframe" src="./pages/log/log.html" frameborder="0"></iframe>
-			<br>
-			<button class="bt" onclick="dia('#log','close')">关闭</button>
-		</dialog>
-		
-		<div class="menubt">
-			<div class="menulist">
-				<div style="height: 100px;"></div>
-				<div class="list_item" onclick="dia('#about','showModal')">
-					<p class="list_item_text">关于</p>
-				</div>
-				<div class="list_item"  onclick="dia('#setting','showModal')">
-					<p class="list_item_text">选项</p>
-				</div>
-				<div class="list_item" onclick="dia('#contect','showModal')">
-					<p class="list_item_text">联系我</p>
-				</div>
-				<div class="list_item"  onclick="dia('#log','showModal')">
-					<p class="list_item_text">日志</p>
-				</div>
-				<div class="list_more">
-					<img class="list_more_img" src="./img/github_logo.png">
-					<p class="list_more_text">powered by Github</p>
-					<p class="list_more_text">Github @ JuneMa-studio</p>
-				</div>
-			</div>
+		<div id="example1-tab2" class="mdui-p-a-2">
+			note
+		</div>
+		<div id="example1-tab3" class="mdui-p-a-2">
+			project
+		</div>
+		<div id="example1-tab4" class="mdui-p-a-2">
+			other
+		</div>
+		<div class="mdui-drawer mdui-drawer-right jm-drawer" id="right-drawer">
+			<span>侧边栏测试</span>
 		</div>
 	</body>
+	<script src="./mdui-v1.0.1/js/mdui.min.js"></script>
 </html>
