@@ -9,8 +9,8 @@
 			.jm-body{
 				overflow-y: hidden;
 			}
-			.jm-title{
-				padding-top: 25px;
+			.jm-top{
+				height: 25px;
 			}
 			.jm-a{
 				font-weight: 600;
@@ -20,7 +20,8 @@
 				width: 61.8vw;
 			}
 			.jm-page{
-				
+				/* 上外边距的目的是抵消移动端状态栏占位元素导致的位移 */
+				margin-top: 25px;
 			}
 			.jm-page iframe{
 				width: 100vw;
@@ -30,7 +31,8 @@
 		</style>
 	</head>
 	<body class="mdui-theme-layout-auto mdui-theme-primary-red mdui-theme-accent-red mdui-appbar-with-toolbar mdui-appbar-with-tab jm-body">
-		<div class="mdui-appbar mdui-appbar-fixed mdui-shadow-0">
+		<div class="mdui-appbar mdui-appbar-fixed mdui-shadow-0 jm-appbar">
+			<div id="top" class="jm-top mdui-color-theme-600"></div>  <!-- 此处为适配移动端沉浸式状态栏添加的留白，删除可能导致移动端显示异常 -->
 			<div id="title" class="mdui-toolbar mdui-color-theme-600 jm-title">
 				<span class="mdui-typo-title">JuneMa Studio</span>
 				<div class="mdui-toolbar-spacer"></div>
@@ -48,16 +50,16 @@
 				<a href="#example1-tab4" class="jm-a">其它</a>
 			</div>
 		</div>
-		<div id="example1-tab1" class="mdui-p-a-2">
+		<div id="example1-tab1" class="mdui-p-a-2 jm-page">
 			home
 		</div>
-		<div id="example1-tab2" class="mdui-p-a-2">
+		<div id="example1-tab2" class="mdui-p-a-2 jm-page">
 			note
 		</div>
-		<div id="example1-tab3" class="mdui-p-a-2">
+		<div id="example1-tab3" class="mdui-p-a-2 jm-page">
 			project
 		</div>
-		<div id="example1-tab4" class="mdui-p-a-2">
+		<div id="example1-tab4" class="mdui-p-a-2 jm-page">
 			other
 		</div>
 		<div class="mdui-drawer mdui-drawer-right jm-drawer" id="right-drawer">
