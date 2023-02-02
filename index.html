@@ -6,6 +6,9 @@
 		<title>JuneMa Studio mobile</title>
 		<link rel="stylesheet" href="./mdui-v1.0.1/css/mdui.min.css">
 		<style>
+			*{
+				box-sizing: border-box;
+			}
 			.jm-body{
 				overflow-y: hidden;
 			}
@@ -15,18 +18,21 @@
 			.jm-a{
 				font-weight: 600;
 			}
-			.jm-drawer{
-				border-radius: 20px 0px 0px 20px;
-				width: 61.8vw;
-			}
 			.jm-page{
 				/* 上外边距的目的是抵消移动端状态栏占位元素导致的位移 */
 				margin-top: 25px;
 			}
-			.jm-page iframe{
-				width: 100vw;
-				height: calc(100vh - 100px);
-				overflow-y: hidden;
+			.jm-drawer{
+				border-radius: 20px 0px 0px 20px;
+				width: 61.8vw;
+				top: 25px;
+			}
+			.jm-theme-1{
+				margin-right: 30px;
+				text-align: left;
+			}
+			.jm-slider{
+				width: 99%;
 			}
 		</style>
 	</head>
@@ -36,7 +42,7 @@
 			<div id="title" class="mdui-toolbar mdui-color-theme-600 jm-title">
 				<span class="mdui-typo-title">JuneMa Studio</span>
 				<div class="mdui-toolbar-spacer"></div>
-				<span class="mdui-btn mdui-btn-icon" mdui-tooltip="{content:'设置主题颜色'}">
+				<span class="mdui-btn mdui-btn-icon" mdui-dialog="{target:'#theme-dialog'}" mdui-tooltip="{content:'设置主题颜色'}">
 					<i class="mdui-icon material-icons">color_lens</i>
 				</span>
 				<span class="mdui-btn mdui-btn-icon" mdui-drawer="{target:'#right-drawer'}">
@@ -62,8 +68,334 @@
 		<div id="example1-tab4" class="mdui-p-a-2 jm-page">
 			other
 		</div>
-		<div class="mdui-drawer mdui-drawer-right jm-drawer" id="right-drawer">
+		<div class="mdui-drawer mdui-drawer-right jm-drawer" id="right-drawer"><!-- 侧边栏 -->
 			<span>侧边栏测试</span>
+		</div>
+		<div class="mdui-dialog" id="theme-dialog"><!-- 主题选择器 -->
+			<div class="mdui-dialog-title">主题选择器</div>
+			<div class="mdui-dialog-content">
+				<div class="mdui-row-xs-3 mdui-grid-list">
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-1">
+							<input type="radio" id="theme-1-1" name="theme-type" checked>
+							<i class="mdui-radio-icon"></i>
+							自动
+						</label>
+					</div>
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-1">
+							<input type="radio" id="theme-1-2" name="theme-type">
+							<i class="mdui-radio-icon"></i>
+							深色
+						</label>
+					</div>
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-1">
+							<input type="radio" id="theme-1-3" name="theme-type">
+							<i class="mdui-radio-icon"></i>
+							浅色
+						</label>
+					</div>
+				</div>
+				<p class="mdui-typo-title">主题色</p>
+				<div class="mdui-grid-list mdui-row-xs-4">
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-2">
+							<input type="radio" id="theme-2-1" name="primary-color" checked>
+							<i class="mdui-radio-icon"></i>
+							红色
+						</label>
+					</div>
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-2">
+							<input type="radio" id="theme-2-1" name="primary-color">
+							<i class="mdui-radio-icon"></i>
+							粉色
+						</label>
+					</div>
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-2">
+							<input type="radio" id="theme-2-1" name="primary-color">
+							<i class="mdui-radio-icon"></i>
+							紫色
+						</label>
+					</div>
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-2">
+							<input type="radio" id="theme-2-1" name="primary-color">
+							<i class="mdui-radio-icon"></i>
+							暗紫
+						</label>
+					</div>
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-2">
+							<input type="radio" id="theme-2-1" name="primary-color">
+							<i class="mdui-radio-icon"></i>
+							湛蓝
+						</label>
+					</div>
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-2">
+							<input type="radio" id="theme-2-1" name="primary-color">
+							<i class="mdui-radio-icon"></i>
+							蓝色
+						</label>
+					</div>
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-2">
+							<input type="radio" id="theme-2-1" name="primary-color">
+							<i class="mdui-radio-icon"></i>
+							浅蓝
+						</label>
+					</div>
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-2">
+							<input type="radio" id="theme-2-1" name="primary-color">
+							<i class="mdui-radio-icon"></i>
+							青色
+						</label>
+					</div>
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-2">
+							<input type="radio" id="theme-2-1" name="primary-color">
+							<i class="mdui-radio-icon"></i>
+							天青
+						</label>
+					</div>
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-2">
+							<input type="radio" id="theme-2-1" name="primary-color">
+							<i class="mdui-radio-icon"></i>
+							绿色
+						</label>
+					</div>
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-2">
+							<input type="radio" id="theme-2-1" name="primary-color">
+							<i class="mdui-radio-icon"></i>
+							浅绿
+						</label>
+					</div>
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-2">
+							<input type="radio" id="theme-2-1" name="primary-color">
+							<i class="mdui-radio-icon"></i>
+							柠檬
+						</label>
+					</div>
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-2">
+							<input type="radio" id="theme-2-1" name="primary-color">
+							<i class="mdui-radio-icon"></i>
+							黄色
+						</label>
+					</div>
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-2">
+							<input type="radio" id="theme-2-1" name="primary-color">
+							<i class="mdui-radio-icon"></i>
+							明黄
+						</label>
+					</div>
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-2">
+							<input type="radio" id="theme-2-1" name="primary-color">
+							<i class="mdui-radio-icon"></i>
+							橙色
+						</label>
+					</div>
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-2">
+							<input type="radio" id="theme-2-1" name="primary-color">
+							<i class="mdui-radio-icon"></i>
+							橘红
+						</label>
+					</div>
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-2">
+							<input type="radio" id="theme-2-1" name="primary-color">
+							<i class="mdui-radio-icon"></i>
+							棕色
+						</label>
+					</div>
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-2">
+							<input type="radio" id="theme-2-1" name="primary-color">
+							<i class="mdui-radio-icon"></i>
+							灰色
+						</label>
+					</div>
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-2">
+							<input type="radio" id="theme-2-1" name="primary-color">
+							<i class="mdui-radio-icon"></i>
+							蓝灰
+						</label>
+					</div>
+				</div>
+				<p class="mdui-typo-title">强调色</p>
+				<div class="mdui-grid-list mdui-row-xs-4">
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-2">
+							<input type="radio" id="theme-2-1" name="accent-color" checked>
+							<i class="mdui-radio-icon"></i>
+							红色
+						</label>
+					</div>
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-2">
+							<input type="radio" id="theme-2-1" name="accent-color">
+							<i class="mdui-radio-icon"></i>
+							粉色
+						</label>
+					</div>
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-2">
+							<input type="radio" id="theme-2-1" name="accent-color">
+							<i class="mdui-radio-icon"></i>
+							紫色
+						</label>
+					</div>
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-2">
+							<input type="radio" id="theme-2-1" name="accent-color">
+							<i class="mdui-radio-icon"></i>
+							暗紫
+						</label>
+					</div>
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-2">
+							<input type="radio" id="theme-2-1" name="accent-color">
+							<i class="mdui-radio-icon"></i>
+							湛蓝
+						</label>
+					</div>
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-2">
+							<input type="radio" id="theme-2-1" name="accent-color">
+							<i class="mdui-radio-icon"></i>
+							蓝色
+						</label>
+					</div>
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-2">
+							<input type="radio" id="theme-2-1" name="accent-color">
+							<i class="mdui-radio-icon"></i>
+							浅蓝
+						</label>
+					</div>
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-2">
+							<input type="radio" id="theme-2-1" name="accent-color">
+							<i class="mdui-radio-icon"></i>
+							青色
+						</label>
+					</div>
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-2">
+							<input type="radio" id="theme-2-1" name="accent-color">
+							<i class="mdui-radio-icon"></i>
+							天青
+						</label>
+					</div>
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-2">
+							<input type="radio" id="theme-2-1" name="accent-color">
+							<i class="mdui-radio-icon"></i>
+							绿色
+						</label>
+					</div>
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-2">
+							<input type="radio" id="theme-2-1" name="accent-color">
+							<i class="mdui-radio-icon"></i>
+							浅绿
+						</label>
+					</div>
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-2">
+							<input type="radio" id="theme-2-1" name="accent-color">
+							<i class="mdui-radio-icon"></i>
+							柠檬
+						</label>
+					</div>
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-2">
+							<input type="radio" id="theme-2-1" name="accent-color">
+							<i class="mdui-radio-icon"></i>
+							黄色
+						</label>
+					</div>
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-2">
+							<input type="radio" id="theme-2-1" name="accent-color">
+							<i class="mdui-radio-icon"></i>
+							明黄
+						</label>
+					</div>
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-2">
+							<input type="radio" id="theme-2-1" name="accent-color">
+							<i class="mdui-radio-icon"></i>
+							橙色
+						</label>
+					</div>
+					<div class="mdui-col">
+						<div class="mdui-grid-tile"></div>
+						<label class="mdui-radio jm-theme-2">
+							<input type="radio" id="theme-2-1" name="accent-color">
+							<i class="mdui-radio-icon"></i>
+							橘红
+						</label>
+					</div>
+				</div>
+				<br>
+				<p class="mdui-typo-title">主题色饱和度</p><br>
+				<label class="mdui-slider mdui-slider-discrete jm-slider">
+				  <input type="range" step="100" min="100" max="900"/>
+				</label>
+			</div>
+			<div class="mdui-dialog-actions">
+				<button class="mdui-btn">重置</button>
+				<button class="mdui-btn">应用修改</button>
+			</div>
 		</div>
 	</body>
 	<script src="./mdui-v1.0.1/js/mdui.min.js"></script>
