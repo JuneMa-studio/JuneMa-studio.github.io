@@ -10,7 +10,6 @@
 				box-sizing: border-box;
 			}
 			.jm-body{
-				overflow-y: hidden;
 				margin-top: 30px;
 			}
 			.jm-top{
@@ -54,16 +53,50 @@
 			</div>
 		</div>
 		<div id="example1-tab1" class="mdui-p-a-2 jm-page">
-			home
+			home<br>home<br>home<br>home<br>home<br>home<br>
+			home<br>home<br>home<br>home<br>home<br>home<br>
+			home<br>home<br>home<br>home<br>home<br>home<br>
+			home<br>home<br>home<br>home<br>home<br>home<br>
+			home<br>home<br>home<br>home<br>home<br>home<br>
+			home<br>home<br>home<br>home<br>home<br>home<br>
+			home<br>home<br>home<br>home<br>home<br>home<br>
+			home<br>home<br>home<br>home<br>home<br>home<br>
+			home<br>home<br>home<br>home<br>home<br>home<br>
+			home<br>home<br>home<br>home<br>home<br>home<br>
+			home<br>home<br>home<br>home<br>home<br>home<br>
 		</div>
 		<div id="example1-tab2" class="mdui-p-a-2 jm-page">
-			note
+			note<br>note<br>note<br>note<br>note<br>note<br>
+			note<br>note<br>note<br>note<br>note<br>note<br>
+			note<br>note<br>note<br>note<br>note<br>note<br>
+			note<br>note<br>note<br>note<br>note<br>note<br>
+			note<br>note<br>note<br>note<br>note<br>note<br>
+			note<br>note<br>note<br>note<br>note<br>note<br>
+			note<br>note<br>note<br>note<br>note<br>note<br>
+			note<br>note<br>note<br>note<br>note<br>note<br>
+			note<br>note<br>note<br>note<br>note<br>note<br>
+			note<br>note<br>note<br>note<br>note<br>note<br>
 		</div>
 		<div id="example1-tab3" class="mdui-p-a-2 jm-page">
-			project
+			project<br>project<br>project<br>project<br>project<br>project<br>
+			project<br>project<br>project<br>project<br>project<br>project<br>
+			project<br>project<br>project<br>project<br>project<br>project<br>
+			project<br>project<br>project<br>project<br>project<br>project<br>
+			project<br>project<br>project<br>project<br>project<br>project<br>
+			project<br>project<br>project<br>project<br>project<br>project<br>
+			project<br>project<br>project<br>project<br>project<br>project<br>
+			project<br>project<br>project<br>project<br>project<br>project<br>
+			project<br>project<br>project<br>project<br>project<br>project<br>
 		</div>
 		<div id="example1-tab4" class="mdui-p-a-2 jm-page">
-			other
+			other<br>other<br>other<br>other<br>other<br>other<br>
+			other<br>other<br>other<br>other<br>other<br>other<br>
+			other<br>other<br>other<br>other<br>other<br>other<br>
+			other<br>other<br>other<br>other<br>other<br>other<br>
+			other<br>other<br>other<br>other<br>other<br>other<br>
+			other<br>other<br>other<br>other<br>other<br>other<br>
+			other<br>other<br>other<br>other<br>other<br>other<br>
+			other<br>other<br>other<br>other<br>other<br>other<br>
 		</div>
 		<div class="mdui-drawer mdui-drawer-right jm-drawer" id="right-drawer"><!-- 侧边栏 -->
 			<span>侧边栏测试</span>
@@ -392,7 +425,28 @@
 	</body>
 	<script src="./mdui-v1.0.1/js/mdui.min.js"></script>
 	<script>
-		var color = document.getElementsByClassName('jm-title')[0].style;
-		console.log(color);
+		// 横划切换页面
+		var baritem = document.getElementsByClassName('jm-a');
+		var body = document.querySelector('body');
+		var startx = "",starty = "",endx = "",endy = "";
+		body.addEventListener("touchstart",function(e){
+			startx = e.touches[0].screenX;
+			starty = e.touches[0].screenY;
+		});
+		body.addEventListener("touchend",function(e){
+			endx = e.changedTouches[0].screenX;
+			endy = e.changedTouches[0].screenY;
+			
+			var x = endx - startx;
+			var y = endy - starty;
+			if(x > 30){
+				console.log("向右滑动了"+ x);
+			}else if(x < -30){
+				console.log("向左滑动了"+ x);
+			}else if(x <= 30 && x >= -30){
+				console.log("滑动距离过短");
+				return 0;
+			}
+		});
 	</script>
 </html>
