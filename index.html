@@ -427,11 +427,20 @@
 	<script>
 		// 横划切换页面
 		var baritem = document.getElementsByClassName('jm-a');
+		console.log(baritem[1].classList);
+		console.log(baritem.length);
 		var body = document.querySelector('body');
-		var startx = "",starty = "",endx = "",endy = "";
+		var startx ,starty,endx,endy,activeindex;
 		body.addEventListener("touchstart",function(e){
 			startx = e.touches[0].screenX;
 			starty = e.touches[0].screenY;
+			
+			for(var i = 0;i < baritem.length;i++){
+				if(baritem[i].classList.length == 2){
+					activeindex = i;
+					console.log("角标"+activeindex+"的标签是活动标签");
+				}
+			}
 		});
 		body.addEventListener("touchend",function(e){
 			endx = e.changedTouches[0].screenX;
@@ -439,15 +448,15 @@
 			
 			var x = endx - startx;
 			var y = endy - starty;
-			if(x > 150){
-				console.log("向右滑动了"+ x);
-				alert("向右滑动了"+ x)
-			}else if(x < -150){
-				console.log("向左滑动了"+ x);
-				alert("向左滑动了"+ x)
-			}else if(x <= 150 && x >= -150){
-				console.log("滑动距离过短");
-				alert("滑动距离过短");
+			if(x > 120){
+				if(activeindex != 0){
+					baritem[activeindex - 1].click();
+				}
+			}else if(x < -120){
+				if(activeindex != 3){
+					baritem[activeindex + 1].click();
+				}
+			}else if(x <= 120 && x >= -120){
 				return 0;
 			}
 		});
