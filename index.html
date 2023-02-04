@@ -11,6 +11,7 @@
 			}
 			.jm-body{
 				overflow-y: hidden;
+				margin-top: 30px;
 			}
 			.jm-top{
 				height: 25px;
@@ -21,7 +22,7 @@
 			.jm-drawer{
 				border-radius: 20px 0px 0px 20px;
 				width: 61.8vw;
-				top: 25px;
+				top: 30px;
 			}
 			.jm-theme-1{
 				margin-right: 30px;
@@ -34,6 +35,7 @@
 	</head>
 	<body class="mdui-theme-layout-auto mdui-theme-primary-red mdui-theme-accent-red mdui-appbar-with-toolbar mdui-appbar-with-tab jm-body">
 		<div class="mdui-appbar mdui-appbar-fixed mdui-shadow-0 jm-appbar">
+			<div style="height: 30px;" class="mdui-color-theme-600"></div>
 			<div id="title" class="mdui-toolbar mdui-color-theme-600 jm-title">
 				<span class="mdui-typo-title">JuneMa Studio</span>
 				<div class="mdui-toolbar-spacer"></div>
@@ -69,7 +71,7 @@
 		<div class="mdui-dialog" id="theme-dialog"><!-- 主题选择器 -->
 			<div class="mdui-dialog-title">主题选择器</div>
 			<div class="mdui-dialog-content">
-				<div class="mdui-row-xs-3 mdui-grid-list">
+				<div class="mdui-row-xs-2 mdui-grid-list">
 					<div class="mdui-col">
 						<div class="mdui-grid-tile"></div>
 						<label class="mdui-radio jm-theme-1">
@@ -96,7 +98,7 @@
 					</div>
 				</div>
 				<p class="mdui-typo-title">主题色</p>
-				<div class="mdui-grid-list mdui-row-xs-4">
+				<div class="mdui-grid-list mdui-row-xs-3">
 					<div class="mdui-col">
 						<div class="mdui-grid-tile"></div>
 						<label class="mdui-radio jm-theme-2">
@@ -251,7 +253,7 @@
 					</div>
 				</div>
 				<p class="mdui-typo-title">强调色</p>
-				<div class="mdui-grid-list mdui-row-xs-4">
+				<div class="mdui-grid-list mdui-row-xs-3">
 					<div class="mdui-col">
 						<div class="mdui-grid-tile"></div>
 						<label class="mdui-radio jm-theme-2">
@@ -381,11 +383,6 @@
 						</label>
 					</div>
 				</div>
-				<br>
-				<p class="mdui-typo-title">主题色饱和度</p><br>
-				<label class="mdui-slider mdui-slider-discrete jm-slider">
-				  <input type="range" step="100" min="100" max="900"/>
-				</label>
 			</div>
 			<div class="mdui-dialog-actions">
 				<button class="mdui-btn">重置</button>
@@ -394,4 +391,8 @@
 		</div>
 	</body>
 	<script src="./mdui-v1.0.1/js/mdui.min.js"></script>
+	<script>
+		var color = document.getElementsByClassName('jm-title')[0].style;
+		console.log(color);
+	</script>
 </html>
