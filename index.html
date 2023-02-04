@@ -441,10 +441,13 @@
 			var y = endy - starty;
 			if(x > 30){
 				console.log("向右滑动了"+ x);
+				alert("向右滑动了"+ x)
 			}else if(x < -30){
 				console.log("向左滑动了"+ x);
+				alert("向左滑动了"+ x)
 			}else if(x <= 30 && x >= -30){
 				console.log("滑动距离过短");
+				alert("滑动距离过短");
 				return 0;
 			}
 		});
