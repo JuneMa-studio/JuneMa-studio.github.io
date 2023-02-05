@@ -44,8 +44,10 @@
 		</div>
 		<div id="example1-tab1" class="mdui-p-a-2 jm-page">
 			<!-- 测试文件选择器可用性 -->
-			<p>选择文件</p>
-			<input type="file" accept="image/png,image/jpg,image/jpeg">
+			<p>选择文件,若无效请手动设置应用的图片访问权限</p>
+			<input type="file" accept="image/png,image/jpg,image/jpeg" onchange="showimg(this)">
+			<br>
+			<img id="imgshower" src="" style="width: 50vw;height: auto;margin: auto;" />
 		</div>
 		<div id="example1-tab2" class="mdui-p-a-2 jm-page">
 			note<br>note<br>note<br>note<br>note<br>note<br>
@@ -502,5 +504,16 @@
 			return finalarry;
 		}
 		// 去同存异结束---------------------------------------------------------------------------------
+		// 选择图片并预览功能---------------------------------------------------------------------------
+		function showimg(file){
+			var reader = new FileReader();
+			var img = document.querySelector('#imgshower');
+			reader.onload = function(ele){
+				img.width = '100';
+				img.height = '100';
+				img.src = ele.target.result;
+			}
+			reader.readAsDataURL(file.files[0]);
+		}
 	</script>
 </html>
